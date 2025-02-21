@@ -1,0 +1,131 @@
+@import './variables', './mixins';
+
+body {
+  font-family: var(--font-hierarchy);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  header {
+    @include text-box-container;
+    font-size: var(--biggerx-text);
+    //color: rgb(var(--color-text));
+
+    a {
+      text-decoration: none;
+      color: rgb(0, 238, 255);
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    select {
+
+    }
+  }
+
+  a {
+    text-decoration:solid;
+    color: rgb(0, 153, 255);
+
+    &:hover{
+      color: rgb(195, 0, 255)
+    }
+    &:visited{
+      
+    }
+    &:active{
+      
+    }
+
+  }
+
+  // tables
+  table {
+    tbody {
+      height: 0.8em;
+
+      td, th{
+        text-align: left;
+        padding-right: 0.8em;
+        padding-bottom: 0.2em;
+      }
+    }
+  }
+  
+
+
+
+  
+  
+  background-color: rgb(var(--color-bg-body));
+  color: rgb(var(--color-text));
+
+  .welcome{
+      text-align: center;
+      margin-top: 0.9em;
+      padding-left: 0.8em;
+      background-color:rgba(var(--color-bg-header));
+      border: var(--header-border);
+      border-radius: 4px;
+
+      h1 {
+        font-size: var(--huge-text);
+      }
+
+      p {
+        font-size: var(--bigger-text);
+      }
+  }
+
+  main {
+    min-height: 80vh;
+    padding-bottom: 1.2rem;
+    flex: 1 0 auto;
+
+    .about {
+        font-size: var(--bigger-text);
+
+        mark {
+          color: rgb(var(--color-text-mark));
+          border-radius: 15px;
+          background: var(--bg-mark);
+          opacity: 0.9;
+          padding: 0.1em 0.2em;
+        }
+
+
+
+    }
+
+  }
+
+  footer {
+    flex-shrink: 0;
+    background-color: rgb(31, 31, 31);
+  }
+
+  ul {
+    li {
+
+    }
+  }
+
+}
+
+
+
+.information-container {
+  @include text-box-container;
+  margin-top: 0.9em; 
+  padding-bottom: 1.2em;
+
+  h2,h3 {
+    line-height: 2px;
+  } 
+
+  p { 
+    margin-top: -0.2em;
+  }
+}

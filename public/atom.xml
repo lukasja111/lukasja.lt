@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title></title>
+    <link rel="self" type="application/atom+xml" href="https://lukasja.com/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://lukasja.com"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-02-21T00:00:00+00:00</updated>
+    <id>https://lukasja.com/atom.xml</id>
+    <entry xml:lang="en">
+        <title>git commit -m &quot;Initial&quot;</title>
+        <published>2025-02-21T00:00:00+00:00</published>
+        <updated>2025-02-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://lukasja.com/posts/hello-world/"/>
+        <id>https://lukasja.com/posts/hello-world/</id>
+        
+        <content type="html" xml:base="https://lukasja.com/posts/hello-world/">&lt;h1 id=&quot;hello-blog&quot;&gt;Hello, blog!&lt;&#x2F;h1&gt;
+&lt;p&gt;This is the very first post I&#x27;m making.&lt;&#x2F;p&gt;
+&lt;p&gt;For now the site is very crude, but it will improve over time️ ♥️.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;about&quot;&gt;About&lt;&#x2F;h1&gt;
+&lt;p&gt;This was my first time making a site with a site generator, I picked &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;, along the way I learned about &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;sass-lang.com&#x2F;&quot;&gt;SaaS&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;keats.github.io&#x2F;tera&#x2F;&quot;&gt;Tera&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

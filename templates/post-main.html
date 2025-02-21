@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block welcome %}
+<section class="welcome">
+  <h1> {{ section.title }} </h1>
+  <p>Post collection</p>
+</section>
+{% endblock welcome %}
+
+{% block content %}
+<ul> 
+  {% for page in section.pages %}
+    <li>
+      {{ page.date | date(format="%Y-%m-%d") }}
+      <a href="{{ page.permalink | safe }}"> {{ page.title }}</a>
+      <p> {{ page.description }} </p>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock content %}
