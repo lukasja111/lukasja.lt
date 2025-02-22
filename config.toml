@@ -1,11 +1,9 @@
 # The URL the site will be built for
-base_url = "https://lukasja.com"
-
+base_url = "https://lukasja.lt"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 generate_feeds = true
-feed_filenames = ["atom.xml", "rss.xml"]
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
@@ -19,3 +17,4 @@ external_links_target_blank = true
 
 [extra]
 # Put all your custom variables here
+feed_filename="atom.xml"
