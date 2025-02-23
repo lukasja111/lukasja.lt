@@ -44,28 +44,23 @@ body {
   // tables
   table {
     tbody {
-      height: 0.8em;
+      height: 0.8vh;
 
       td, th{
         text-align: left;
-        padding-right: 0.8em;
+        padding-right: 0.8vw;
         padding-bottom: 0.2em;
       }
     }
   }
-  
-
-
-
-  
   
   background-color: rgb(var(--color-bg-body));
   color: rgb(var(--color-text));
 
   .welcome{
       text-align: center;
-      margin-top: 0.9em;
-      padding-left: 0.8em;
+      margin-top: 0.9vh;
+      padding-left: 0.8vw;
       background-color:rgba(var(--color-bg-header));
       border: var(--header-border);
       border-radius: 4px;
