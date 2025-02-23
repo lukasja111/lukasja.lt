@@ -33,12 +33,9 @@ body {
       color: rgb(195, 0, 255)
     }
     &:visited{
-      
     }
     &:active{
-      
     }
-
   }
 
   // tables
@@ -89,11 +86,7 @@ body {
           opacity: 0.9;
           padding: 0.1em 0.2em;
         }
-
-
-
     }
-
   }
 
   footer {
@@ -108,8 +101,6 @@ body {
   }
 
 }
-
-
 
 .information-container {
   @include text-box-container;
