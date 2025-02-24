@@ -1,0 +1,7 @@
+[person]
+items = ["name", "surname", "age", "nationality"]
+name = "Lukas"
+surname = "Jasiulionis"
+age = 20
+nationality = "Lithuanian"
+
