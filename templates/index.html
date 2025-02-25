@@ -10,9 +10,9 @@
 {% block content %}
 
 <section class="about">
-
   <div class="information-container">
     <h2>About</h2>
+    <br>
     <table>
       <tbody>
         {% for i in data.person.items %}
@@ -26,13 +26,31 @@
   </div>
 
   <div class="information-container">
-    <h2> Programming </h3>
+    <h3> Education </h3>
+    <p> </p>
+    <p> Pursuing my bachelor's degree in software engineering at Vilnius University </p>
+    <p> (Projected to finish in 2027) </p>
+  </div>
+
+  <div class="information-container">
+    <h3> Programming </h3>
     <p> </p>
     <p> Still finding my niche, mostly enjoy doing systems level programming, but open to trying out anything</p>
     <p> Currently in pursue of a bachelor's degree in software engineering at Vilnius University, to finish in 2027</p>
     <p> Love me some <mark>C++(20/23)</mark>, <mark>Python(3.10+)</mark>, JavaScript, React, <mark>TypeScript</mark></p>
-    <p> Currently focused on learning more about <mark>Rust</mark>, <mark>NeoVim</mark> and <mark>NixOs</mark></p>
+    <p> Currently focused on learning more about <mark>Rust</mark>, <mark>NeoVim</mark> and <mark>NixOS</mark></p>
   </div>
+
+</section>
+
+<section class="feed">
+  <section class="project-feed">
+    <h2> Project feed</h2>
+  </section>
+
+  <section class="post-feed">
+    <h2> Post feed </h2>
+  </section>
 </section>
 
 {% endblock content %}
