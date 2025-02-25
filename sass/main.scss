@@ -5,13 +5,20 @@
   margin-top: 0.9em;
   padding-bottom: 1.2em;
 
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
   h2,
   h3 {
-    line-height: 2px;
+    line-height: 1.2;
+    margin-bottom: 0.7em;
   }
 
   p {
-    margin-top: -0.2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.7em;
+    max-width: 100%;
   }
 }
 
@@ -194,4 +201,35 @@ body {
     li {}
   }
 
+}
+
+@media screen and (max-width: 768px) {
+
+  /* Stack everything vertically on mobile */
+  main {
+    flex-direction: column;
+
+    .about,
+    .feed {
+      /* Take full width */
+      max-width: 100% !important;
+      min-width: 100% !important;
+      flex: 1 0 auto !important;
+    }
+
+    /* Make sure containers don't overflow */
+    .project-feed,
+    .post-feed {
+      /* Allow text to wrap */
+      word-break: break-word;
+      /* Reduce min height to be more proportional */
+      min-height: auto !important;
+      padding: 10px !important;
+    }
+
+    /* Ensure mark tags don't break layout */
+    mark {
+      white-space: normal !important;
+    }
+  }
 }
