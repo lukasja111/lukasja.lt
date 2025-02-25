@@ -2,10 +2,9 @@
 
 {% block welcome %}
 <section class="welcome">
-  <h1>Welcome</h1>
-  <p>On this site you can find information on me, my work, interests and where to find me.</p>
+  <h1> Welcome </h1>
+  <p> This is the homepage for my site. </p>
 </section>
-
 {% endblock welcome%}
 
 {% block content %}
@@ -14,12 +13,11 @@
 
   <div class="information-container">
     <h2>About</h2>
-   {% set data = load_data(path="content/about/data.toml") %}
     <table>
-<tbody>
+      <tbody>
         {% for i in data.person.items %}
         <tr>
-          <th>{{ i }}</th>
+          <th>{{ i | capitalize }}</th>
           <td>{{ data.person[i] }}</td>
         </tr>
         {% endfor %}
@@ -28,11 +26,12 @@
   </div>
 
   <div class="information-container">
-    <h2>Programming</h3>
+    <h2> Programming </h3>
     <p> </p>
-    <p>Mainly like to write code in <mark>C++</mark>, <mark>Python</mark>, <mark>Java</mark>, JavaScript, React, <mark>TypeScript</mark>.</p>
-    <p>Daily-drive arch(btw), love working at the systems level, also really enjoy front-end work.</p>
-    <p>Currently trying to learn more about Scala, R, NixOs and <mark>Rust</mark>.</p>
+    <p> Still finding my niche, mostly enjoy doing systems level programming, but open to trying out anything</p>
+    <p> Currently in pursue of a bachelor's degree in software engineering at Vilnius University, to finish in 2027</p>
+    <p> Love me some <mark>C++(20/23)</mark>, <mark>Python(3.10+)</mark>, JavaScript, React, <mark>TypeScript</mark></p>
+    <p> Currently focused on learning more about <mark>Rust</mark>, <mark>NeoVim</mark> and <mark>NixOs</mark></p>
   </div>
 </section>
 

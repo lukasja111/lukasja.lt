@@ -21,14 +21,8 @@
     <a href="{{ get_url(path='/') }}">home</a>
     <a href="{{ get_url(path='@/posts/_index.md') }}">posts</a>
     <a href="{{ get_url(path='atom.xml') }}">rss</a>
-    <!-- todo: add option to pick between themes -->
-    <!--
-            <select id="pick-a-theme">
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-            </select>
-            -->
-
+    {# About/data.toml load#}
+    {% set data = load_data(path="content/about/data.toml") %}
   </header>
 
   <div>
@@ -44,28 +38,7 @@
   <footer>
     <table>
       <tbody>
-        <!--
-        <tr>
-          <th> Github</th>
-          <td><a href="https://github.com/lukasja111">github.com/lukasja111</a></td>
-        </tr>
-        <tr>
-          <th> Linkedin</th>
-          <td><a href="https://www.linkedin.com/in/lukas-jasiulionis/">linkedin.com/in/lukas-jasiulionis</a></td>
-        </tr>
-        <tr>
-          <th> Email</th>
-          <td><a href="mailto:lukasja111@gmail.com">lukasja111@gmail.com</a></td>
-        </tr>
-        <tr>
-          <th> Blueksky</th>
-          <td><a href="https://bsky.app/profile/jasiulionis.bsky.social">jasiulionis.bsky.social</a></td>
-        </tr>
-          -->
-
-        {% set footer = load_data(path="content/about/data.toml") %}
-
-        {% for social in footer.socials%}
+        {% for social in data.socials%}
         <tr>
           <th> <img src="{{ social.icon }}" alt="{{ social.name }} icon" width="24" height="24"> {{ social.name }} </th>
           <td> <a href="{{ social.link }}"> {{ social.link_display }}</a></td>
@@ -74,6 +47,7 @@
       </tbody>
     </table>
   </footer>
+
 </body>
 
 </html>
