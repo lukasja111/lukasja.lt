@@ -97,8 +97,8 @@ body {
 
     .about {
       font-size: var(--bigger-text);
-      flex: 1 0 60%;
-      min-width: 40vw;
+      flex: 1 0 250px;
+      min-width: auto;
       max-width: 54vw;
       font-weight: bold;
 
@@ -108,33 +108,73 @@ body {
         border-radius: 15px;
         background: var(--bg-mark);
         opacity: 0.9;
+        white-space: nowrap;
+        display: inline-block;
         padding: 2px;
       }
     }
 
     .feed {
       margin-top: 0.9em;
-      min-width: 38vw;
-      max-width: 44vw;
+      flex: 1 0 250px;
+      min-width: auto;
+      //max-width: 44vw;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: auto;
+      align-self: stretch;
 
       .project-feed {
+        box-shadow: 2px 2px #3c3c3c;
+        font-size: var(--biggerx-text);
+        color: rgb(51, 255, 51);
+        text-align: center;
+        font-family: var(--terminal-font);
         border-style: solid;
-        border-width: 5px;
-        border-color: rgb(255, 0, 0);
+        border-width: 8px;
+        border-color: rgb(24, 24, 24);
+        line-height: 1.2;
 
         display: flex;
         flex-direction: column;
         flex: 0 0 35%;
+        padding: 10px;
 
         min-height: 47vh;
         gap: 1rem;
-        background-color: rgb(244, 244, 244);
+        background-color: rgb(0, 0, 0);
+
+        h2 {
+          text-decoration: underline dashed rgb(51, 253, 51) 2px;
+          text-underline-offset: 15px;
+        }
+
+        p {
+          margin: 0;
+          padding: 0;
+          line-height: 1.2;
+        }
+
       }
 
+
       .post-feed {
-        flex: 1 0 auto;
-        min-height: 33vh;
-        background-color: rgb(244, 244, 244);
+        border-color: rgb(42, 42, 42);
+        background-color: rgb(24, 24, 24);
+        font-size: var(--bigger-text);
+        flex: 1 1 auto;
+        margin-top: 1rem;
+        border-style: solid;
+        border-width: 8px;
+
+        box-shadow: 2px 2px #3c3c3c;
+
+
+        h2 {
+          text-align: center;
+          text-decoration: underline wavy #4a0404;
+        }
       }
     }
 

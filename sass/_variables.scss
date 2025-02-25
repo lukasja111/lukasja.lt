@@ -6,8 +6,10 @@
   font-display: swap;
 }
 
+
 :root {
   --font-hierarchy: 'VictorMono Nerd Font', 'Consolas', 'DejaVu Sans Mono', 'Courier New', monospace;
+  --terminal-font: 'VT323', monospace;
 
   --alpha-link-visited: 0.9;
   --small-text: 60%;

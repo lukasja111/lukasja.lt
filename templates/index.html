@@ -45,11 +45,27 @@
 
 <section class="feed">
   <section class="project-feed">
-    <h2> Project feed</h2>
+    <h2>Thingy v0.0.1</h2>
+    <br>
+    <p> 0_o </p>
+    <p> There is nothing here... </p>
+    <p> ...for now... </p>
+    <p> Check back in a little while &lt;3 </p>
   </section>
 
   <section class="post-feed">
-    <h2> Post feed </h2>
+    <h2> Post feed📪 </h2>
+
+    {% set posts = get_section(path="posts/_index.md") %}
+   <ul> 
+  {% for page in posts.pages %}
+    <li>
+      {{ page.date | date(format="%Y-%m-%d") }}
+      <a href="{{ page.permalink | safe }}"> {{ page.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+
   </section>
 </section>
 

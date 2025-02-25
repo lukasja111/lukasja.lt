@@ -10,6 +10,9 @@
   <link rel="alternate" type="application/atom+xml" title="RSS"
     href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   {% block seo %}
   <title>{{ config.title }}</title>
   <meta name="description" content="{{ config.description }}">
@@ -20,6 +23,7 @@
   <header>
     <a href="{{ get_url(path='/') }}">home</a>
     <a href="{{ get_url(path='@/posts/_index.md') }}">posts</a>
+    <a href="#contacts">contacts</a>
     <a href="{{ get_url(path='atom.xml') }}">rss</a>
     {# About/data.toml load#}
     {% set data = load_data(path="content/about/data.toml") %}
@@ -35,7 +39,7 @@
     {% endblock %}
   </main>
 
-  <footer>
+  <footer id="contacts">
     <table>
       <tbody>
         {% for social in data.socials%}
