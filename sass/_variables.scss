@@ -1,47 +1,43 @@
 @font-face {
-    font-family: 'VictorMono Nerd Font';
-    src: url('../static/font/VictorMonoNerdFontMono-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'VictorMono Nerd Font';
+  src: url('../static/assets/font/VictorMonoNerdFontMono-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
-    --font-hierarchy: 'VictorMono Nerd Font', 'Consolas', 'DejaVu Sans Mono', 'Courier New', monospace;
-    
-    // global 
-    --alpha-link-visited: 0.9;
-    
-    --small-text: 60%;
-    --medium-text: 100%;
-    --big-text: 120%;
-    --bigger-text: 160%;
-    --biggerx-text: 170%;
-    --huge-text: 200%;
-    --beyondxxl-text: 400%;
-    --color-text: 232, 232, 232;
+  --font-hierarchy: 'VictorMono Nerd Font', 'Consolas', 'DejaVu Sans Mono', 'Courier New', monospace;
 
-    --color-link: 255, 0, 0;
+  --alpha-link-visited: 0.9;
+  --small-text: 60%;
+  --medium-text: 100%;
+  --big-text: 120%;
+  --bigger-text: 160%;
+  --biggerx-text: 170%;
+  --huge-text: 200%;
+  --beyondxxl-text: 400%;
+  --color-text: 232, 232, 232;
 
-    // header 
-    --color-bg-header: 206, 75, 52, 0.9;
-    --header-border: 4px solid rgba(44, 44, 44, 0.6);
+  --color-link: 255, 0, 0;
 
-    // body
-    --color-text-mark: 247, 247, 247;
-    --bg-mark: linear-gradient(to bottom right, rgba(225, 51, 117, 1), rgba(230, 15, 51, 1));
-    --color-bg-body: 45, 45, 45;
-    --color-bg-content: 68, 71, 90;
+  // header 
+  --color-bg-header: 206, 75, 52, 0.9;
+  --header-border: 4px solid rgba(44, 44, 44, 0.6);
 
-    // 
+  // body
+  --color-text-mark: 247, 247, 247;
+  --bg-mark: linear-gradient(to bottom right, rgba(225, 51, 117, 1), rgba(230, 15, 51, 1));
+  --color-bg-body: 45, 45, 45;
+  --color-bg-content: 68, 71, 90;
 
-    // Themes
-    &[data-theme="dark"] {
-    }
+  // 
 
-   
-    &[data-theme="light"] {
-    }
+  // Themes
+  &[data-theme="dark"] {}
+
+
+  &[data-theme="light"] {}
 
 
 }

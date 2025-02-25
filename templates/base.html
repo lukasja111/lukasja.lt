@@ -44,6 +44,7 @@
   <footer>
     <table>
       <tbody>
+        <!--
         <tr>
           <th> Github</th>
           <td><a href="https://github.com/lukasja111">github.com/lukasja111</a></td>
@@ -60,6 +61,16 @@
           <th> Blueksky</th>
           <td><a href="https://bsky.app/profile/jasiulionis.bsky.social">jasiulionis.bsky.social</a></td>
         </tr>
+          -->
+
+        {% set footer = load_data(path="content/about/data.toml") %}
+
+        {% for social in footer.socials%}
+        <tr>
+          <th> <img src="{{ social.icon }}" alt="{{ social.name }} icon" width="24" height="24"> {{ social.name }} </th>
+          <td> <a href="{{ social.link }}"> {{ social.link_display }}</a></td>
+        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </footer>
