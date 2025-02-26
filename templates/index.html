@@ -12,13 +12,12 @@
 <section class="about">
   <div class="information-container">
     <h2>About</h2>
-    <br>
     <table>
       <tbody>
-        {% for i in data.person.items %}
+        {% for item in data.person.items %}
         <tr>
-          <th>{{ i | capitalize }}</th>
-          <td>{{ data.person[i] }}</td>
+          <th>{{ item | capitalize }}</th>
+          <td>{{ data.person[item] }}</td>
         </tr>
         {% endfor %}
       </tbody>

@@ -1,14 +1,14 @@
 @font-face {
-  font-family: 'VictorMono Nerd Font';
-  src: url('../static/assets/font/VictorMonoNerdFontMono-Regular.ttf');
+  font-family: 'HasklugNerdFontProp';
+  src: url('../font/HasklugNerdFontPropo-Regular.otf');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-
 :root {
-  --font-hierarchy: 'VictorMono Nerd Font', 'Consolas', 'DejaVu Sans Mono', 'Courier New', monospace;
+  // GLOBAL VARIABLES 
+  --font-hierarchy: 'HasklugNerdFontProp', 'Consolas', 'DejaVu Sans Mono', 'Courier New', monospace;
   --terminal-font: 'VT323', monospace;
 
   --alpha-link-visited: 0.9;
@@ -20,11 +20,16 @@
   --biggerx-text: 170%;
   --huge-text: 200%;
   --beyondxxl-text: 400%;
+
   --color-text: 232, 232, 232;
+  --color-link-text: #00eeff;
+  --color-link-text-hover: #0066ff;
+  --color-bg-body: 45, 45, 45;
+  --color-bg-content: 68, 71, 90;
 
-  --color-link: 255, 0, 0;
+  --color-container-text: 72, 72, 72, 0.8;
 
-  // header 
+  // HEADER 
   --color-bg-header: 206, 75, 52, 0.9;
   --header-border: 4px solid rgba(44, 44, 44, 0.6);
 
@@ -32,17 +37,19 @@
   --color-text-mark: 211, 237, 245;
   --bg-mark: linear-gradient(to bottom right, rgba(255, 73, 0, 1), rgba(255, 157, 0, 1));
 
+  // PROJECT FEED
+  --box-shadow-project-feed: 2px 2px #3c3c3c;
+  --text-color-project-feed: 51, 255, 5;
+  --bg-color-project-feed: 0, 0, 0;
+  --border-color-project-feed: 24, 24, 24;
 
-  --color-bg-body: 45, 45, 45;
-  --color-bg-content: 68, 71, 90;
-
-  // 
-
-  // Themes
-  &[data-theme="dark"] {}
+  // POST FEED
+  --border-color-post-feed: 42, 42, 42;
+  --bg-color-post-feed: 24, 24, 24;
+  --box-shadow-post-feed: 2px 2px #3c3c3c;
+  --text-decoration-post-feed: underline wavy #4a0404;
 
 
-  &[data-theme="light"] {}
-
+  // FOOTER
 
 }

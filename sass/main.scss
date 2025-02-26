@@ -22,60 +22,55 @@
   }
 }
 
+a {
+  text-decoration: solid;
+  color: var(--color-link-text);
+
+  &:hover {
+    color: var(--color-link-text-hover);
+  }
+}
+
+table {
+  tbody {
+    height: 0.8vh;
+
+    td,
+    th {
+      text-align: left;
+      padding-right: 0.8vw;
+      padding-bottom: 0.2em;
+    }
+  }
+}
+
+
+
 body {
-  background-color: rgb(var(--color-bg-body));
-  color: rgb(var(--color-text));
-  font-family: var(--font-hierarchy);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 
+  background-color: rgb(var(--color-bg-body));
+  color: rgb(var(--color-text));
+  font-family: var(--font-hierarchy);
+
   header {
     @include text-box-container;
     font-size: var(--biggerx-text);
-    //color: rgb(var(--color-text));
 
     a {
       text-decoration: none;
-      color: rgb(0, 238, 255);
+
+      & * {
+        color: inherit;
+      }
 
       &:hover {
         text-decoration: underline;
       }
     }
-
-    select {}
   }
-
-  a {
-    text-decoration: solid;
-    color: rgb(0, 153, 255);
-
-    &:hover {
-      color: rgb(195, 0, 255)
-    }
-
-    &:visited {}
-
-    &:active {}
-  }
-
-  // tables
-  table {
-    tbody {
-      height: 0.8vh;
-
-      td,
-      th {
-        text-align: left;
-        padding-right: 0.8vw;
-        padding-bottom: 0.2em;
-      }
-    }
-  }
-
-  //background-color: rgb(var(--color-bg-body));
-  //color: rgb(var(--color-text));
 
   .welcome {
     text-align: center;
@@ -125,7 +120,6 @@ body {
       margin-top: 0.9em;
       flex: 1 0 250px;
       min-width: auto;
-      //max-width: 44vw;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -133,14 +127,14 @@ body {
       align-self: stretch;
 
       .project-feed {
-        box-shadow: 2px 2px #3c3c3c;
+        box-shadow: var(--box-shadow-project-feed);
         font-size: var(--biggerx-text);
-        color: rgb(51, 255, 51);
+        color: rgb(var(--text-color-project-feed));
         text-align: center;
         font-family: var(--terminal-font);
         border-style: solid;
         border-width: 8px;
-        border-color: rgb(24, 24, 24);
+        border-color: rgb(var(--border-color-project-feed));
         line-height: 1.2;
 
         display: flex;
@@ -150,10 +144,10 @@ body {
 
         min-height: 47vh;
         gap: 1rem;
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(var(--bg-color-project-feed));
 
         h2 {
-          text-decoration: underline dashed rgb(51, 253, 51) 2px;
+          text-decoration: underline dashed rgb(var(--text-color-project-feed)) 2px;
           text-underline-offset: 15px;
         }
 
@@ -165,22 +159,20 @@ body {
 
       }
 
-
       .post-feed {
-        border-color: rgb(42, 42, 42);
-        background-color: rgb(24, 24, 24);
+        border-color: rgb(var(--border-color-post-feed));
+        background-color: rgb(var(--bg-color-post-feed));
         font-size: var(--bigger-text);
         flex: 1 1 auto;
         margin-top: 1rem;
         border-style: solid;
         border-width: 8px;
 
-        box-shadow: 2px 2px #3c3c3c;
-
+        box-shadow: var(--box-shadow-post-feed);
 
         h2 {
           text-align: center;
-          text-decoration: underline wavy #4a0404;
+          text-decoration: var(--text-decoration-post-feed);
         }
       }
     }
@@ -192,42 +184,34 @@ body {
     background-color: rgb(31, 31, 31);
     padding: 0.9em;
 
+    /*
     a {
       text-decoration: underline;
     }
-  }
-
-  ul {
-    li {}
+    */
   }
 
 }
 
 @media screen and (max-width: 768px) {
 
-  /* Stack everything vertically on mobile */
   main {
     flex-direction: column;
 
     .about,
     .feed {
-      /* Take full width */
       max-width: 100% !important;
       min-width: 100% !important;
       flex: 1 0 auto !important;
     }
 
-    /* Make sure containers don't overflow */
     .project-feed,
     .post-feed {
-      /* Allow text to wrap */
       word-break: break-word;
-      /* Reduce min height to be more proportional */
       min-height: auto !important;
       padding: 10px !important;
     }
 
-    /* Ensure mark tags don't break layout */
     mark {
       white-space: normal !important;
     }
