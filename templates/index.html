@@ -2,55 +2,71 @@
 
 {% block welcome %}
 <section class="welcome">
-  <h1>Welcome</h1>
-  <p>On this site you can find information on me, my work, interests and where to find me.</p>
+  <h1> Welcome </h1>
+  <p> This is the homepage for my site. </p>
 </section>
-
 {% endblock welcome%}
 
 {% block content %}
 
 <section class="about">
-
   <div class="information-container">
     <h2>About</h2>
+    <br>
     <table>
       <tbody>
+        {% for i in data.person.items %}
         <tr>
-          <th>Name</th>
-          <td>Lukas Jasiulionis</td>
+          <th>{{ i | capitalize }}</th>
+          <td>{{ data.person[i] }}</td>
         </tr>
-        <tr>
-          <th>Age</th>
-          <td>20</td>
-        </tr>
-        <tr>
-          <th>Nationality</th>
-          <td>Lithuanian</td>
-        </tr>
-        <tr>
-          <th>Occupation</th>
-          <td>Student</td>
-        </tr>
-        <tr>
-          <th>Education</th>
-          <td>Bachelor's in software engineering (to be finished in 2027)</td>
-        </tr>
-        <tr>
-          <th>Hobbies</th>
-          <td>🖥️ 🌐 📖 🚲</td>
-        </tr>
-      </tbody>   
+        {% endfor %}
+      </tbody>
     </table>
   </div>
 
-  
   <div class="information-container">
-    <h2>Programming</h3>
-    <p>Mainly like to write code in <mark>C++</mark>, <mark>Python</mark>, <mark>Java</mark>, JavaScript, React, <mark>TypeScript</mark>.</p>
-    <p>Daily-drive arch(btw), love working at the systems level, also really enjoy front-end work.</p>
-    <p>Currently trying to learn more about Scala, R, NixOs and <mark>Rust</mark>.</p>
+    <h3> Education </h3>
+    <p> </p>
+    <p> Pursuing my bachelor's degree in software engineering at Vilnius University </p>
+    <p> (Projected to finish in 2027) </p>
   </div>
+
+  <div class="information-container">
+    <h3> Programming </h3>
+    <p> </p>
+    <p> Still finding my niche, mostly enjoy doing systems level programming, but open to trying out anything</p>
+    <p> Currently in pursue of a bachelor's degree in software engineering at Vilnius University, to finish in 2027</p>
+    <p> Love me some <mark>C++(20/23)</mark>, <mark>Python(3.10+)</mark>, JavaScript, React, <mark>TypeScript</mark></p>
+    <p> Currently focused on learning more about <mark>Rust</mark>, <mark>NeoVim</mark> and <mark>NixOS</mark></p>
+  </div>
+
+</section>
+
+<section class="feed">
+  <section class="project-feed">
+    <h2>Thingy v0.0.1</h2>
+    <br>
+    <p> 0_o </p>
+    <p> There is nothing here... </p>
+    <p> ...for now... </p>
+    <p> Check back in a little while &lt;3 </p>
+  </section>
+
+  <section class="post-feed">
+    <h2> Post feed📪 </h2>
+
+    {% set posts = get_section(path="posts/_index.md") %}
+   <ul> 
+  {% for page in posts.pages %}
+    <li>
+      {{ page.date | date(format="%Y-%m-%d") }}
+      <a href="{{ page.permalink | safe }}"> {{ page.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+
+  </section>
 </section>
 
 {% endblock content %}

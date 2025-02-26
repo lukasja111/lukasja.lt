@@ -1,0 +1,30 @@
+[person]
+items = ["name", "surname", "age", "nationality"]
+name = "Lukas"
+surname = "Jasiulionis"
+age = 20
+nationality = "Lithuanian"
+
+[[socials]]
+name = "Github"
+link = "https://github.com/lukasja111"
+link_display = "github.com/lukasja111"
+icon = "/assets/img/github-mark-white.png"
+
+[[socials]]
+name = "Linkedin"
+link = "https://www.linkedin.com/in/lukas-jasiulionis/"
+link_display = "in/lukas-jasiulionis"
+icon = "/assets/img/linkedin-logo.png"
+
+[[socials]]
+name = "Email"
+link = "mailto:lukasja111@gmail.com"
+link_display = "lukasja111@gmail.com"
+icon = "/assets/img/gmail-logo-48.png"
+
+[[socials]]
+name = "BlueSky"
+link = "https://bsky.app/profile/jasiulionis.bsky.social"
+link_display = "jasiulionis.bsky.social"
+icon = "/assets/img/bluesky-logo-48.png"

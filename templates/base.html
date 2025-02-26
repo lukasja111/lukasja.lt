@@ -1,68 +1,57 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    
-    <head>
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
 
-        {% block seo %}
-        <title>{{ config.title }}</title>
-        <meta name="description" content="{{ config.description }}">
-        {% endblock seo %}
-    </head>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
+  <link rel="alternate" type="application/atom+xml" title="RSS"
+    href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
 
-    <body>
-        <header>
-            <a href="{{ get_url(path='/') }}">home</a>
-            <a href="{{ get_url(path='@/posts/_index.md') }}">posts</a>
-            <a href="{{ get_url(path='atom.xml') }}">rss</a>
-            <!-- todo: add option to pick between themes -->
-            <!--
-            <select id="pick-a-theme">
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-            </select>
-            -->
-            
-        </header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  {% block seo %}
+  <title>{{ config.title }}</title>
+  <meta name="description" content="{{ config.description }}">
+  {% endblock seo %}
+</head>
 
-        <div>
-            {% block welcome %}
-            {% endblock %}
-        </div>
+<body>
+  <header>
+    <a href="{{ get_url(path='/') }}">home</a>
+    <a href="{{ get_url(path='@/posts/_index.md') }}">posts</a>
+    <a href="#contacts">contacts</a>
+    <a href="{{ get_url(path='atom.xml') }}">rss</a>
+    {# About/data.toml load#}
+    {% set data = load_data(path="content/about/data.toml") %}
+  </header>
 
+  <div>
+    {% block welcome %}
+    {% endblock %}
+  </div>
 
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
 
-        <footer>
-                <table>
-                  <tbody>
-                    <tr>
-                      <th>Github</th>
-                      <td><a href="https://github.com/lukasja111">github.com/lukasja111</a></td>
-                    </tr>
-                    <tr>
-                      <th>Linkedin</th>
-                      <td><a href="https://www.linkedin.com/in/lukas-jasiulionis/">linkedin.com/in/lukas-jasiulionis</a></td>
-                    </tr>
-                    <tr>
-                      <th>Email</th>
-                      <td><a href="mailto:lukasja111@gmail.com">lukasja111@gmail.com</a></td>
-                    </tr>
-                    <tr>
-                      <th>Blueksky</th>
-                      <td><a href="https://bsky.app/profile/jasiulionis.bsky.social">jasiulionis.bsky.social</a></td>
-                    </tr>
-                  </tbody>   
-                </table>
-        </footer>
-    </body>
+  <footer id="contacts">
+    <table>
+      <tbody>
+        {% for social in data.socials%}
+        <tr>
+          <th> <img src="{{ social.icon }}" alt="{{ social.name }} icon" width="24" height="24"> {{ social.name }} </th>
+          <td> <a href="{{ social.link }}"> {{ social.link_display }}</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </footer>
+
+</body>
 
 </html>
