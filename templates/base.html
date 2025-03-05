@@ -24,7 +24,7 @@
     <a href="{{ get_url(path='/') }}">home</a>
     <a href="{{ get_url(path='@/posts/_index.md') }}">posts</a>
     <a href="#contacts">contacts</a>
-    <a href="{{ get_url(path='atom.xml') }}">rss</a>
+    <a href="{{ get_url(path='atom.xml') }}" id="misc">rss</a>
     {# About/data.toml load#}
     {% set data = load_data(path="content/about/data.toml") %}
   </header>

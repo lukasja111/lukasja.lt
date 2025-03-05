@@ -8,11 +8,25 @@
   overflow: hidden;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  border-radius: 5px;
+
+  h2 {
+    //text-align: center;
+  }
 
   h2,
   h3 {
     line-height: 1.2;
     margin-bottom: 0.7em;
+
+    &:before {
+      content: "•"
+    }
+  }
+
+  table {
+    //margin-left: auto;
+    //margin-right: auto;
   }
 
   p {
@@ -22,65 +36,80 @@
   }
 }
 
+a {
+  text-decoration: solid;
+  color: var(--color-link-text);
+
+  &:hover {
+    color: var(--color-link-text-hover);
+  }
+}
+
+table {
+
+  tbody {
+    height: 0.8vh;
+
+    th {
+      border-right: solid;
+      border-color: rgba(var(--color-border-side));
+    }
+
+    td,
+    th {
+      text-align: left;
+      padding-right: 0.8vw;
+      padding-bottom: 0.2em;
+    }
+  }
+}
+
 body {
-  background-color: rgb(var(--color-bg-body));
-  color: rgb(var(--color-text));
-  font-family: var(--font-hierarchy);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
+  background-color: rgb(var(--color-bg-body));
+  color: rgb(var(--color-text));
+  font-family: var(--font-hierarchy);
+
+  main {
+    margin-right: 2vw;
+    margin-left: 2vw;
+  }
 
   header {
+    text-align: left;
     @include text-box-container;
     font-size: var(--biggerx-text);
-    //color: rgb(var(--color-text));
+    margin-left: 1vw;
+    margin-right: 1vw;
+
+    #misc {
+      text-align: right;
+    }
 
     a {
       text-decoration: none;
-      color: rgb(0, 238, 255);
+
+      & * {
+        color: inherit;
+      }
 
       &:hover {
         text-decoration: underline;
       }
     }
-
-    select {}
   }
-
-  a {
-    text-decoration: solid;
-    color: rgb(0, 153, 255);
-
-    &:hover {
-      color: rgb(195, 0, 255)
-    }
-
-    &:visited {}
-
-    &:active {}
-  }
-
-  // tables
-  table {
-    tbody {
-      height: 0.8vh;
-
-      td,
-      th {
-        text-align: left;
-        padding-right: 0.8vw;
-        padding-bottom: 0.2em;
-      }
-    }
-  }
-
-  //background-color: rgb(var(--color-bg-body));
-  //color: rgb(var(--color-text));
 
   .welcome {
+    border-radius: 25%;
+    margin-right: 4em;
+    margin-left: 4em;
     text-align: center;
     margin-top: 0.9vh;
     padding-left: 0.8vw;
+    padding-right: 0.8vw;
     background-color: rgba(var(--color-bg-header));
     border: var(--header-border);
     border-radius: 4px;
@@ -108,6 +137,7 @@ body {
       min-width: auto;
       max-width: 54vw;
       font-weight: bold;
+      height: fit-content;
 
       mark {
         font-size: var(--mediumx-text);
@@ -118,6 +148,7 @@ body {
         white-space: nowrap;
         display: inline-block;
         padding: 2px;
+        font-weight: bold;
       }
     }
 
@@ -125,7 +156,6 @@ body {
       margin-top: 0.9em;
       flex: 1 0 250px;
       min-width: auto;
-      //max-width: 44vw;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -133,27 +163,27 @@ body {
       align-self: stretch;
 
       .project-feed {
-        box-shadow: 2px 2px #3c3c3c;
+        box-shadow: var(--box-shadow-project-feed);
         font-size: var(--biggerx-text);
-        color: rgb(51, 255, 51);
+        color: rgb(var(--text-color-project-feed));
         text-align: center;
         font-family: var(--terminal-font);
         border-style: solid;
-        border-width: 8px;
-        border-color: rgb(24, 24, 24);
+        border-width: 12px;
+        border-color: rgb(var(--border-color-project-feed));
         line-height: 1.2;
 
         display: flex;
         flex-direction: column;
-        flex: 0 0 35%;
+        flex: 0 0 auto;
         padding: 10px;
 
         min-height: 47vh;
         gap: 1rem;
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(var(--bg-color-project-feed));
 
         h2 {
-          text-decoration: underline dashed rgb(51, 253, 51) 2px;
+          text-decoration: underline dashed rgb(var(--text-color-project-feed)) 2px;
           text-underline-offset: 15px;
         }
 
@@ -165,26 +195,28 @@ body {
 
       }
 
-
       .post-feed {
-        border-color: rgb(42, 42, 42);
-        background-color: rgb(24, 24, 24);
+        border-radius: 8px;
+        border-color: rgb(var(--border-color-post-feed));
+        background-color: rgb(var(--bg-color-post-feed));
         font-size: var(--bigger-text);
         flex: 1 1 auto;
         margin-top: 1rem;
         border-style: solid;
         border-width: 8px;
 
-        box-shadow: 2px 2px #3c3c3c;
-
+        box-shadow: var(--box-shadow-post-feed);
 
         h2 {
           text-align: center;
-          text-decoration: underline wavy #4a0404;
+          text-decoration: var(--text-decoration-post-feed);
         }
       }
     }
 
+    .post-singular {
+      width: 100vw;
+    }
   }
 
   footer {
@@ -192,42 +224,34 @@ body {
     background-color: rgb(31, 31, 31);
     padding: 0.9em;
 
+    /*
     a {
       text-decoration: underline;
     }
-  }
-
-  ul {
-    li {}
+    */
   }
 
 }
 
 @media screen and (max-width: 768px) {
 
-  /* Stack everything vertically on mobile */
   main {
     flex-direction: column;
 
     .about,
     .feed {
-      /* Take full width */
       max-width: 100% !important;
       min-width: 100% !important;
       flex: 1 0 auto !important;
     }
 
-    /* Make sure containers don't overflow */
     .project-feed,
     .post-feed {
-      /* Allow text to wrap */
       word-break: break-word;
-      /* Reduce min height to be more proportional */
       min-height: auto !important;
       padding: 10px !important;
     }
 
-    /* Ensure mark tags don't break layout */
     mark {
       white-space: normal !important;
     }

@@ -19,8 +19,8 @@ icon = "/assets/img/linkedin-logo.png"
 
 [[socials]]
 name = "Email"
-link = "mailto:lukasja111@gmail.com"
-link_display = "lukasja111@gmail.com"
+link = "mailto:me@lukasja.lt"
+link_display = "me@lukasja.lt"
 icon = "/assets/img/gmail-logo-48.png"
 
 [[socials]]
