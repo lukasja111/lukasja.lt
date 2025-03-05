@@ -192,7 +192,6 @@ body {
           padding: 0;
           line-height: 1.2;
         }
-
       }
 
       .post-feed {
@@ -233,8 +232,10 @@ body {
 
 }
 
+// 
+// Phone settings 
+//
 @media screen and (max-width: 768px) {
-
   main {
     flex-direction: column;
 

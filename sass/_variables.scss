@@ -7,7 +7,7 @@
 }
 
 :root {
-  --font-hierarchy: 'HasklugNerdFontProp', 'Consolas', 'DejaVu Sans Mono', 'Courier New', monospace;
+  --font-hierarchy: 'Roboto', 'Consolas', 'DejaVu Sans Mono', 'Courier New', monospace;
   --terminal-font: 'VT323', monospace;
   --alpha-link-visited: 0.9;
   --small-text: 60%;
@@ -18,7 +18,7 @@
   --biggerx-text: 170%;
   --huge-text: 200%;
   --beyondxxl-text: 400%;
-  /*
+
   --color-text: 232, 232, 232;
   --color-link-text: #00eeff;
   --color-link-text-hover: #0066ff;
@@ -38,8 +38,8 @@
   --bg-color-post-feed: 24, 24, 24;
   --box-shadow-post-feed: 2px 2px #3c3c3c;
   --text-decoration-post-feed: underline wavy #4a0404;
-  */
 
+  /*
   --color-text: 217, 217, 217;
   --color-link-text: #ffcc00;
   --color-link-text-hover: #e5ed09;
@@ -59,6 +59,6 @@
   --bg-color-post-feed: 24, 24, 24;
   --box-shadow-post-feed: 2px 2px #3c3c3c;
   --text-decoration-post-feed: underline wavy #4a0404;
-
+  */
 
 }
