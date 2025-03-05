@@ -148,6 +148,7 @@ body {
         white-space: nowrap;
         display: inline-block;
         padding: 2px;
+        font-weight: bold;
       }
     }
 
@@ -168,7 +169,7 @@ body {
         text-align: center;
         font-family: var(--terminal-font);
         border-style: solid;
-        border-width: 8px;
+        border-width: 12px;
         border-color: rgb(var(--border-color-project-feed));
         line-height: 1.2;
 
