@@ -1,71 +1,18 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %} {% set data =
+load_data(path="content/about/data.toml") %}
 
-{% block welcome %}
-<section class="welcome">
-  <h1> Welcome </h1>
-  <p> This is the homepage for my site. </p>
-</section>
-{% endblock welcome%}
-
-{% block content %}
-
-<section class="about">
-  <div class="information-container">
-    <h2>About</h2>
-    <table>
-      <tbody>
-        {% for item in data.person.items %}
-        <tr>
-          <th>{{ item | capitalize }}</th>
-          <td>{{ data.person[item] }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-
-  <div class="information-container">
-    <h3> Education </h3>
-    <p> </p>
-    <p> Pursuing my bachelor's degree in software engineering at Vilnius University </p>
-    <p> (Projected to finish in 2027) </p>
-  </div>
-
-  <div class="information-container">
-    <h3> Programming </h3>
-    <p> </p>
-    <p> Still finding my niche, mostly enjoy doing systems level programming, but open to trying out anything</p>
-    <p> Currently in pursue of a bachelor's degree in software engineering at Vilnius University, to finish in 2027</p>
-    <p> Love me some <mark>C++(20/23)</mark>, <mark>Python(3.10+)</mark>, JavaScript, React, <mark>TypeScript</mark></p>
-    <p> Currently focused on learning more about <mark>Rust</mark>, <mark>NeoVim</mark> and <mark>NixOS</mark></p>
-  </div>
-
-</section>
-
-<section class="feed">
-  <section class="project-feed">
-    <h2>Thingy v0.0.1</h2>
-    <br>
-    <p> 0_o </p>
-    <p> There is nothing here... </p>
-    <p> ...for now... </p>
-    <p> Check back in a little while &lt;3 </p>
-  </section>
-
-  <section class="post-feed">
-    <h2> Post feed📪 </h2>
-
-    {% set posts = get_section(path="posts/_index.md") %}
-   <ul> 
-  {% for page in posts.pages %}
-    <li>
-      {{ page.date | date(format="%Y-%m-%d") }}
-      <a href="{{ page.permalink | safe }}"> {{ page.title }}</a>
-    </li>
-  {% endfor %}
-  </ul>
-
-  </section>
+<section class="about-content">
+    <div class="information-container">
+        <h3>About</h3>
+        <p>
+            Hi! <br />
+            I am Lukas Jasiulionis, a third-year university student pursuing a
+            bachelor's in software engineering at Vilnius University.
+            <br />
+            I am in the process of renovating this site, so please excuse the
+            minimal amount of content.
+        </p>
+    </div>
 </section>
 
 {% endblock content %}
