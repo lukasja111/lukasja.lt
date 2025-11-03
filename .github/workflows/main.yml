@@ -1,21 +1,20 @@
 name: Deploy
-
 on:
   push:
     branches:
       - master
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Remote deploy
+      - name: Deploy to VPS
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /lukasja.lt
+            cd /root/lukasja.lt
+            git pull origin master
             zola build
             sudo rsync -avz --delete ./public/ /var/www/lukas/
