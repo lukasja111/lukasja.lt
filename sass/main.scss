@@ -10,6 +10,38 @@
     word-wrap: break-word;
     border-radius: 5px;
 
+    pre {
+        text-align: left;
+        font-family: monospace;
+        line-height: 1;
+        overflow-x: auto;
+        margin: 1em auto;
+        white-space: pre;
+        display: inline-block;
+
+        background: linear-gradient(
+            90deg,
+            #2a2a2a,
+            #4a4a4a,
+            #7a7a7a,
+            #9a9a9a,
+            #7a7a7a,
+            #4a4a4a,
+            #2a2a2a,
+            #2a2a2a,
+            #2a2a2a
+        );
+        background-size: 400% 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        animation: wave-flow 8s linear infinite;
+
+        filter: blur(0px);
+        transform-origin: left center;
+    }
+
     h2,
     h3 {
         line-height: 1.2;
@@ -29,6 +61,27 @@
         margin-top: 0.5em;
         margin-bottom: 0.7em;
         max-width: 100%;
+    }
+}
+
+@keyframes wave-flow {
+    0% {
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+    }
+    25% {
+        filter: drop-shadow(2px 2px 4px rgba(255, 255, 255, 0.3));
+    }
+    50% {
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
+    }
+    75% {
+        filter: drop-shadow(-2px -2px 4px rgba(255, 255, 255, 0.3));
+    }
+    100% {
+        background-position: 200% 50%;
+        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0));
     }
 }
 
@@ -185,18 +238,6 @@ body {
         .post-singular {
             width: 100vw;
         }
-    }
-
-    footer {
-        flex-shrink: 0;
-        background-color: rgb(31, 31, 31);
-        padding: 0.9em;
-
-        /*
-    a {
-      text-decoration: underline;
-    }
-    */
     }
 }
 

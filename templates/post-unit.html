@@ -1,17 +1,14 @@
-{% extends "base.html" %}
-
-{% block content %}
-  <div class="post-singular">  
+{% extends "base.html" %} {% block content %}
+<div class="post-singular">
     <section class="welcome">
-        
-        <strong> <i> <p>{{ page.title }}</p> </i> </strong>
+        <strong>
+            <i> <p>{{ page.title }}</p> </i>
+        </strong>
         {% if page.description %}
-            <p>{{ page.description }} </p>
+        <p>{{ page.description }}</p>
         {% endif %}
     </section>
 
-    <div class="information-container">
-        {{ page.content | safe }}
-    </div>
-  </div>
+    <div class="information-container">{{ page.content | safe }}</div>
+</div>
 {% endblock content %}
