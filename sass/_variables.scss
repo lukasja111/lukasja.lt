@@ -1,6 +1,6 @@
 :root {
     --font-hierarchy:
-        "Roboto", "Consolas", "DejaVu Sans Mono", "Courier New", monospace;
+        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
     --terminal-font: "VT323", monospace;
     --alpha-link-visited: 0.9;
     --small-text: 60%;
@@ -12,27 +12,41 @@
     --huge-text: 200%;
     --beyondxxl-text: 400%;
 
-    --color-text: 232, 232, 232;
-    --color-link-text: #00eeff;
-    --color-link-text-hover: #0066ff;
-    --color-bg-body: 45, 45, 45;
-    --color-bg-content: 68, 71, 90;
+    // Professional orangish color palette
+    --burnt-orange: 204, 85, 51;
+    --terracotta: 186, 104, 73;
+    --warm-tan: 217, 168, 132;
+    --deep-charcoal: 28, 28, 30;
+    --charcoal-card: 38, 38, 40;
+    --warm-gray: 75, 75, 78;
+    --light-gray: 230, 230, 232;
+    --text-primary: 245, 245, 247;
+    --text-secondary: 152, 152, 157;
+    --border-subtle: 58, 58, 60;
+
+    // Color assignments
+    --color-text: var(--text-primary);
+    --color-link-text: rgb(var(--burnt-orange));
+    --color-link-text-hover: rgb(var(--terracotta));
+    --color-bg-body: var(--deep-charcoal);
+    --color-bg-content: var(--charcoal-card);
     --color-container-text: 72, 72, 72, 0.8;
-    --color-border-side: 61, 61, 61, 0.8;
-    --color-bg-header: 206, 75, 52, 0.9;
-    --header-border: 4px solid rgba(44, 44, 44, 0.6);
-    --color-text-mark: 211, 237, 245;
-    --bg-mark: linear-gradient(
-        to bottom right,
-        rgba(255, 0, 61, 1),
-        rgba(255, 73, 0, 1)
-    );
-    --box-shadow-project-feed: 2px 2px #3c3c3c;
-    --text-color-project-feed: 51, 255, 5;
-    --bg-color-project-feed: 0, 0, 0;
-    --border-color-project-feed: 24, 24, 24;
-    --border-color-post-feed: 42, 42, 42;
-    --bg-color-post-feed: 24, 24, 24;
-    --box-shadow-post-feed: 2px 2px #3c3c3c;
-    --text-decoration-post-feed: underline wavy #4a0404;
+    --color-border-side: var(--border-subtle);
+    --color-bg-header: var(--charcoal-card);
+    --header-border: 1px solid rgb(var(--border-subtle));
+    --color-text-mark: 255, 255, 255;
+    --bg-mark: rgb(var(--burnt-orange));
+    --box-shadow-project-feed: 0 1px 3px rgba(0, 0, 0, 0.15);
+    --text-color-project-feed: var(--text-primary);
+    --bg-color-project-feed: var(--charcoal-card);
+    --border-color-project-feed: var(--border-subtle);
+    --border-color-post-feed: var(--border-subtle);
+    --bg-color-post-feed: var(--charcoal-card);
+    --box-shadow-post-feed: 0 1px 3px rgba(0, 0, 0, 0.15);
+    --text-decoration-post-feed: none;
+
+    // Tag colors - solid, no transparency
+    --tag-bg: 58, 48, 45;
+    --tag-text: rgb(var(--warm-tan));
+    --tag-border: var(--warm-gray);
 }

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="tags-container">
+    <h1 class="tags-header">All Tags</h1>
+    <div class="tags-cloud">
+        {% for term in terms %}
+        <a href="{{ term.permalink }}" class="tag-cloud-item">
+            <span class="tag-name">{{ term.name }}</span>
+            <span class="tag-count">{{ term.pages | length }}</span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="tag-page-container">
+    <div class="tag-page-header">
+        <h1 class="tag-page-title">
+            Posts tagged with <span class="tag-highlight">"{{ term.name }}"</span>
+        </h1>
+        <p class="tag-page-count">{{ term.pages | length }} post{% if term.pages | length != 1 %}s{% endif %}</p>
+    </div>
+
+    <div class="posts-grid">
+        {% for page in term.pages %}
+        <article class="post-card">
+            <div class="post-card-header">
+                <h2 class="post-title">
+                    <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+                </h2>
+                <time class="post-date">{{ page.date | date(format="%B %d, %Y") }}</time>
+            </div>
+            {% if page.description %}
+            <p class="post-description">{{ page.description }}</p>
+            {% endif %}
+            {% if page.taxonomies.tags %}
+            <div class="post-tags">
+                {% for tag in page.taxonomies.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </article>
+        {% endfor %}
+    </div>
+
+    <div class="back-to-tags">
+        <a href="{{ get_url(path='tags') }}">← View all tags</a>
+    </div>
+</div>
+{% endblock content %}

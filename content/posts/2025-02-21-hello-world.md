@@ -2,6 +2,9 @@
 title = "git commit -m \"Initial\""
 date = 2025-02-21
 description = "Initial post."
+
+[taxonomies]
+tags = ["meta", "first-post", "zola"]
 +++
 
 # Hello, blog  

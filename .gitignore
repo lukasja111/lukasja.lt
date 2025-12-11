@@ -1,2 +1,4 @@
 /public
 .env
+.claude
+.CLAUDE.md

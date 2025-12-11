@@ -16,7 +16,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=VT323&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=VT323&display=swap"
             rel="stylesheet"
         />
 
@@ -30,6 +30,7 @@
         <header>
             <a href="{{ get_url(path='/') }}">home</a>
             <a href="{{ get_url(path='@/posts/_index.md') }}">posts</a>
+            <a href="{{ get_url(path='tags') }}">tags</a>
             <a href="{{ get_url(path='@/contacts.md') }}">contacts</a>
             <a href="{{ get_url(path='atom.xml') }}" id="misc">rss</a>
             {# About/data.toml load#} {% set data =

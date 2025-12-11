@@ -1,14 +1,24 @@
 {% extends "base.html" %} {% block content %}
 <div class="post-singular">
-    <section class="welcome">
-        <strong>
-            <i> <p>{{ page.title }}</p> </i>
-        </strong>
-        {% if page.description %}
-        <p>{{ page.description }}</p>
-        {% endif %}
-    </section>
+    <article class="post-article">
+        <header class="post-header">
+            <h1 class="post-title-main">{{ page.title }}</h1>
+            <div class="post-meta">
+                <time class="post-date">{{ page.date | date(format="%B %d, %Y") }}</time>
+                {% if page.taxonomies.tags %}
+                <div class="post-tags">
+                    {% for tag in page.taxonomies.tags %}
+                    <a href="{{ get_url(path='tags/' ~ tag) }}" class="tag">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% if page.description %}
+            <p class="post-description-full">{{ page.description }}</p>
+            {% endif %}
+        </header>
 
-    <div class="information-container">{{ page.content | safe }}</div>
+        <div class="post-content information-container">{{ page.content | safe }}</div>
+    </article>
 </div>
 {% endblock content %}
