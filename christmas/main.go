@@ -12,7 +12,7 @@ import (
 // ============================================================
 // DEMO VARIABLE - Change this color to show fast recompile!
 // ============================================================
-var ornamentColor = color.RGBA{255, 0, 0, 255} // RED - try: {50, 100, 255, 255} for BLUE
+var ornamentColor = color.RGBA{0, 255, 255, 255} // RED - try: {50, 100, 255, 255} for BLUE
 // ============================================================
 
 const (
