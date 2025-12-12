@@ -11,7 +11,7 @@ import (
 
 // ============================================================
 // CHRISTMAS PVZ
-var ornamentColor = color.RGBA{0, 255, 255, 255}
+var ornamentColor = color.RGBA{255, 0, 0, 255}
 
 const (
 	screenWidth  = 400
